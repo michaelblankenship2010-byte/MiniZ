@@ -1,0 +1,15 @@
+name: MiniZ
+version: '${version}'
+main: dev.miniz.MiniZPlugin
+api-version: '26.3'
+description: A tiny copy of you that follows you around. Customize it with /miniz.
+author: '${author}'
+authors: ['${author}']
+
+permissions:
+  miniz.use:
+    description: Bring out and customize your own Mini Me
+    default: true
+  miniz.admin:
+    description: Reload the config and put away other players' Mini Mes
+    default: op

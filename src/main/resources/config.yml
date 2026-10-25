@@ -1,0 +1,164 @@
+# ------------------------------------------------------------
+#  MiniZ - a tiny copy of you that follows you around
+# ------------------------------------------------------------
+
+# All text players see (messages, menus, emote and holiday names, the [MiniZ] chat tag...)
+# is in language.yml next to this file. Edit it to reword, recolor or translate the plugin,
+# then run /miniz reload.
+
+# Every Mini Me's size compared to a normal player (0.45 = 45%). Players can't change it.
+size: 0.45
+
+# Name shown above a Mini Me before the player picks their own.
+# MiniMessage format. <player> = the owner's name.
+default-name: "<gold>Mini <player>"
+
+# Small grey line under the name. Leave blank to hide it.
+description: ""
+
+# Longest name a player can set (raw text, including color tags).
+max-name-length: 64
+
+# Bring a player's Mini Me back when they rejoin (if they had it out).
+spawn-on-join: true
+
+# Give brand-new players a Mini Me the first time they join.
+out-on-first-join: false
+
+follow:
+  # It starts walking once you're further than this (blocks)...
+  start-distance: 3.0
+  # ...and stops once it's this close to you.
+  stop-distance: 1.7
+  # Blocks per tick. A player walks about 0.22, sprints about 0.28.
+  walk-speed: 0.24
+  run-speed: 0.36
+  # If it falls this far behind it pops right to you.
+  teleport-distance: 14.0
+
+orbit:
+  radius: 1.6
+  # Radians per tick.
+  speed: 0.08
+
+# Ticks between trail particles (1 = every tick).
+trail-interval: 3
+
+# Rows in each Mini Me's backpack (1-5, 9 slots per row). One more row is added for the tab bar.
+backpack-rows: 3
+
+jobs:
+  # How far from you (Follow mode) or from its spot (Stay mode) it looks for work, in blocks.
+  farm-radius: 10
+  hunt-radius: 10
+  # Damage per hit with nothing in hand. Holding a sword/axe (copied from your hand
+  # when "Copy me" is on) hits like that weapon.
+  base-damage: 3.0
+  damage-multiplier: 1.0
+  # Ticks between hits / between harvests (20 ticks = 1 second).
+  attack-cooldown: 15
+  harvest-cooldown: 6
+  # Ask claim/protection plugins before harvesting (as if you broke the crop yourself).
+  respect-protection: true
+  # Hunt baby animals / mobs with a name tag? (Tamed pets and leashed mobs are always safe.)
+  hunt-babies: false
+  hunt-named: false
+  # Miner: how far it looks for blocks, how far it can reach, and the built-in tools it uses
+  # when it isn't holding a fitting pickaxe/shovel in its Gear. (Ancient debris and obsidian
+  # need a diamond pickaxe, so give it one in its Gear for those.)
+  mine-radius: 8
+  mine-reach: 2.8
+  mine-tool: iron_pickaxe
+  mine-shovel: iron_shovel
+  # 1.0 = about as fast as you with that tool. Higher = slower.
+  mine-time-multiplier: 1.0
+  # Pointing: look at an ore and sneak + punch the air (or /miniz mine this). Your Mini Me
+  # digs a tunnel to it if it has to, mines it and the rest of the vein, then pops back to you.
+  # It only digs through natural blocks (stone, dirt, gravel, netherrack, ores...), never builds,
+  # chests or bedrock, never into lava, and it asks claim plugins first (respect-protection).
+  point-to-mine: true
+  point-range: 48
+  # Most blocks one tunnel may dig, and touching blocks of the same ore it mines afterwards.
+  tunnel-max: 64
+  vein-limit: 16
+  # Tunnel blocks break faster than normal mining (0.6 = 60% of the time). Drops from plain
+  # stone/dirt it digs through are thrown away unless this is true (ores are always kept).
+  tunnel-speed-multiplier: 0.6
+  tunnel-keep-drops: false
+  tunnel-move-speed: 0.18
+  come-back-after-digging: true
+  # The normal Miner job also digs a short tunnel when it can't walk to an ore it found.
+  auto-tunnel: true
+  auto-tunnel-max: 12
+  # When the backpack is full it walks back to you, says "I'm full!" and hands its loot over.
+  come-back-when-full: true
+  give-to-owner: true
+  # Mobs it never fights.
+  never-hunt:
+    - ender_dragon
+    - wither
+    - warden
+    - elder_guardian
+
+health:
+  # New players start with "Mobs can attack it" on? (Each player can toggle it.)
+  mobs-attack-by-default: true
+  max-health: 20.0
+  # Show "❤ 18/20" under its name while mobs can attack it.
+  show-health: true
+  # Hostile mobs this close (with nothing else to chase) go after the Mini Me. 0 = only when it hits them.
+  aggro-radius: 8.0
+  # Healing: this much health every second, once it hasn't been hit for this many ticks.
+  regen-amount: 1.0
+  regen-delay-ticks: 100
+  # When it runs out of health it's knocked out (gear and backpack are kept) and comes back after this.
+  knockout-seconds: 30
+
+upgrades:
+  health:
+    # Each level adds this much max health (20 = 10 hearts at level 0, see health.max-health).
+    per-level: 4.0
+    max-level: 10
+    # One purchase costs cost-amount x cost-item and gives levels-per-purchase levels.
+    # Default: 1 dragon egg = 2 levels, so maxing out takes 5 dragon eggs.
+    # Creative-mode players upgrade for free.
+    cost-item: dragon_egg
+    cost-amount: 1
+    levels-per-purchase: 2
+
+festive:
+  # Mini Mes dress up for holidays on their own, based on the date: a hat, a particle trail,
+  # a symbol before their name, a greeting, and a small gift on the holiday itself.
+  # Players can turn it off for themselves with /miniz festive off. Holiday hats/trails only
+  # show when the player hasn't picked their own hat (Gear / Wear my armor) or trail.
+  # When two holidays overlap, the one whose day is closest wins.
+  enabled: true
+  # Time zone for the date, e.g. America/Los_Angeles. Blank = the server's time zone.
+  timezone: ""
+  # Force one holiday all the time (e.g. christmas). Blank = use the date.
+  force: ""
+  hats: true
+  greeting: true
+  # A small gift on the holiday itself, once a year per holiday per player.
+  gifts: true
+  # Per holiday you can set:  enabled, days-before / days-after (how long the look lasts
+  # around the day), and for holidays that move each year, extra "dates" as YYYY-MM-DD
+  # (lunar_new_year, eid_al_fitr, diwali and hanukkah have dates built in through 2028+).
+  # Mother's Day, Father's Day and Thanksgiving use the US dates.
+  holidays:
+    new_year:         { enabled: true, days-before: 1, days-after: 0 }
+    lunar_new_year:   { enabled: true, days-before: 1, days-after: 6, dates: [] }
+    valentines:       { enabled: true, days-before: 1, days-after: 0 }
+    st_patricks:      { enabled: true, days-before: 1, days-after: 0 }
+    eid_al_fitr:      { enabled: true, days-before: 0, days-after: 2, dates: [] }
+    april_fools:      { enabled: true, days-before: 0, days-after: 0 }
+    easter:           { enabled: true, days-before: 2, days-after: 1 }
+    earth_day:        { enabled: true, days-before: 0, days-after: 0 }
+    mothers_day:      { enabled: true, days-before: 0, days-after: 0 }
+    fathers_day:      { enabled: true, days-before: 0, days-after: 0 }
+    independence_day: { enabled: true, days-before: 1, days-after: 0 }
+    diwali:           { enabled: true, days-before: 2, days-after: 2, dates: [] }
+    halloween:        { enabled: true, days-before: 7, days-after: 0 }
+    thanksgiving:     { enabled: true, days-before: 0, days-after: 3 }
+    christmas:        { enabled: true, days-before: 24, days-after: 1 }
+    hanukkah:         { enabled: true, days-before: 0, days-after: 7, dates: [] }

@@ -1,0 +1,615 @@
+# ------------------------------------------------------------
+#  MiniZ - language.yml
+# ------------------------------------------------------------
+# Every bit of text players see. Change anything you like, then run /miniz reload.
+#
+#  * Colors and styles use MiniMessage: <red>, <gold>, <bold>, <gradient:aqua:light_purple>...</gradient>,
+#    <rainbow>...</rainbow>, even <click:run_command:'/miniz'>...</click>.
+#    Guide: https://docs.advntr.dev/minimessage/format.html
+#  * {words} in curly brackets are filled in by the plugin (a player's name, a number...). Keep them.
+#  * \n starts a new line (used in menu item descriptions).
+#  * To show a < character as text, write \\< (e.g. /miniz name \\<name>).
+#  * Missing lines fall back to English and are added back to this file automatically.
+
+# The tag in front of every chat line from MiniZ.
+prefix: "<dark_gray>[<gold>MiniZ</gold>]</dark_gray> "
+
+# Little words used in many places.
+word:
+  "on": "<green>ON"
+  "off": "<red>OFF"
+
+# Replies to /miniz commands.
+cmd:
+  no-permission: "You can't do that."
+  reloaded: "Config and language.yml reloaded."
+  clear:
+    usage: "Usage: /miniz clear \\<player>"
+    done: "Put away {player}'s Mini Me."
+  player-offline: "That player isn't online."
+  players-only: "Only players have a Mini Me."
+  "on":
+    already: "Your Mini Me is already out."
+    knocked-out: "Your Mini Me is knocked out. It'll be back in {seconds}s."
+    done: "Here's your Mini Me!"
+  "off":
+    done: "Mini Me put away. /miniz on to bring it back."
+  name:
+    usage: "Usage: /miniz name \\<name>  (or reset)"
+    too-long: "That name is too long (max {max} characters)."
+    bad-tags: "Those color tags don't look right."
+    empty: "The name can't be empty."
+    too-many-letters: "Keep the name to 32 letters or fewer."
+    done: "Name set to {name}"
+  nametag:
+    usage: "Usage: /miniz nametag on|off"
+    shown: "Name tag shown."
+    hidden: "Name tag hidden."
+  mode:
+    usage: "Usage: /miniz mode follow|stay|orbit|shoulder"
+    done: "Mode: {mode} — {description}."
+  pose:
+    usage: "Usage: /miniz pose stand|sneak|sleep|swim|glide"
+    done: "Resting pose: {pose}."
+  trail:
+    usage: "Usage: /miniz trail {options}"
+    done: "Trail: {trail}."
+  glow:
+    usage: "Usage: /miniz glow \\<color>|off"
+    unknown: "Unknown color. Try: red, gold, aqua, light_purple..."
+    "off": "Glow off."
+    done: "Glowing {color}."
+  mimic:
+    usage: "Usage: /miniz mimic on|off"
+    "on": "It'll copy what you do."
+    "off": "It'll stop copying you."
+  outfit:
+    usage: "Usage: /miniz outfit on|off"
+    "on": "It'll wear whatever armor you wear."
+    "off": "Armor off."
+  hand:
+    usage: "Usage: /miniz hand left|right"
+    left: "Main hand: left."
+    right: "Main hand: right."
+  emote:
+    unknown: "Unknown emote. Try: {options}|random|stop"
+  not-out: "Bring your Mini Me out first (/miniz on)."
+  job:
+    usage: "Usage: /miniz job farm|hunt|both|mine|off"
+    "off": "Job off. It'll just hang out with you."
+    done: "Job: {job} — {description}."
+    switched-to-follow: "Switched to Follow mode so it can work."
+    hunt-tip: "Tip: turn on /miniz hunt hostile on (or passive) so it has something to fight."
+  hunt:
+    usage: "Usage: /miniz hunt hostile|passive on|off"
+    hostile-on: "Hostile mobs: will be hunted."
+    hostile-off: "Hostile mobs: left alone."
+    passive-on: "Passive mobs: will be hunted."
+    passive-off: "Passive mobs: left alone."
+    not-hunter: "(Set /miniz job hunt to start hunting.)"
+  replant:
+    usage: "Usage: /miniz replant on|off"
+    "on": "It'll replant crops after harvesting."
+    "off": "It won't replant."
+  collect:
+    usage: "Usage: /miniz collect on|off"
+    "on": "Loot goes into its backpack."
+    "off": "Loot stays on the ground."
+  festive:
+    test-off: "Holiday preview off — back to the real date."
+    test-unknown: "Holidays: {options}"
+    test-on: "Previewing {holiday} for everyone. /miniz festive test off to stop."
+    list-header: "Holidays (next date):"
+    none-today: "No holiday today."
+    today: "It's {holiday}!"
+    yours-on: "Your festive looks are on (/miniz festive on|off)."
+    yours-off: "Your festive looks are off (/miniz festive on|off)."
+    usage: "Usage: /miniz festive on|off"
+    "on": "Your Mini Me will dress up for holidays."
+    "off": "No more holiday looks."
+  upgrade:
+    usage: "Usage: /miniz upgrade health"
+  aggro:
+    usage: "Usage: /miniz aggro on|off"
+    "on": "Mobs can attack your Mini Me now (it fights back). Give it armor in /miniz gear!"
+    "off": "Mobs will leave your Mini Me alone."
+  mine:
+    list-empty: "It isn't set to mine anything."
+    list: "Mining: {list}"
+    ores: "It'll mine every ore."
+    none: "It won't mine anything."
+    unknown: "Unknown thing to mine. Try: {options}"
+    "on": "{thing}: will be mined."
+    "off": "{thing}: left alone."
+    not-miner: "(Set /miniz job mine to start mining.)"
+    this-none: "Look at an ore first (up to {range} blocks away)."
+    this-not-ore: "That isn't something it can mine."
+    this-too-far: "That's too far away for it to dig to."
+  summon:
+    done: "Poof!"
+  reset:
+    done: "Mini Me reset to defaults."
+  unknown: "Unknown option. /miniz help for the list."
+
+# /miniz help. {command} and {description} are filled in by help.format.
+help:
+  header: "<gold>Customize your Mini Me:"
+  format: "<yellow>{command}</yellow> <gray>— {description}"
+  menu: "bring it out + open the menu"
+  on-off: "bring out / put away"
+  name: "colors work: <gradient:aqua:light_purple>Tiny</gradient>"
+  nametag: "show or hide its name"
+  mode: "how it moves"
+  pose: "resting pose"
+  trail: "particle trail"
+  glow: "glowing outline"
+  mimic: "copy your moves + held items"
+  outfit: "wear your armor"
+  hand: "main hand"
+  emotes: "pick from {count} emotes"
+  emote: "e.g. dance, moonwalk, faint, magic"
+  job: "give it work to do"
+  hunt: "which mobs it fights"
+  replant: "plant seeds back after harvesting"
+  collect: "loot into its backpack"
+  backpack: "open its inventory"
+  gear: "give it armor and a weapon/tool"
+  upgrades: "spend dragon eggs to upgrade its health"
+  festive: "holiday looks (Santa hat at Christmas...)"
+  mine: "choose what the Miner digs up"
+  mine-this: "dig to the ore you're looking at (or sneak + punch the air)"
+  aggro: "let mobs attack it (it fights back)"
+  summon: "pop it back next to you"
+  reset: "everything back to default"
+
+# Things your Mini Me says in chat. {name} = its name, {message} = what it says.
+speech:
+  holiday-greeting: "{greeting}, {player}!"
+  holiday-gift: "I got you a {holiday} present! Check your inventory."
+  knocked-out: "Ouch! I got knocked out... back in {seconds} seconds."
+  format: "{name} <dark_gray>»</dark_gray> <white>{message}"
+  open-backpack-button: " <click:run_command:'/miniz backpack'><yellow>[open my backpack]</yellow></click>"
+  back: "I'm back!"
+  stronger: "I feel stronger! Max health is now {health}."
+  order:
+    start: "On it! Digging to that {thing}."
+    gone: "Someone already mined that one!"
+    you-left: "You went too far away, so I came back."
+    gave-up: "I couldn't get to it, sorry."
+    need-better-tool: "I need a better pickaxe for that. Put one in my Gear!"
+    protected: "I'm not allowed to dig there."
+    done: "Got it!"
+    done-vein: "Got it! I mined the whole vein ({count} blocks)."
+    blocked: "I can't dig through that."
+    lava: "There's lava in the way. I'm not going in there!"
+    too-long: "That's a really long way to dig. Bring me closer!"
+  back-to-work: "Thanks! Back to work."
+  full-other-world: "I'm full! Come get your stuff, or empty my backpack."
+  full-delivered: "I'm full! Here's what I found ({count} items)."
+  full-you-too: "I'm full! Your inventory's full too, so I kept the rest."
+  full-waiting: "I'm full! Empty my backpack and I'll get back to work."
+
+# The health line under its name (while mobs can attack it).
+health-tag:
+  low: "<red>❤ {health}/{max}"
+  normal: "<green>❤ {health}/{max}"
+
+# The /miniz menu, the emote picker and the mining menu.
+menu:
+  close: "<gray>Close"
+  mining:
+    title: "<dark_purple>What should it mine?"
+    needs-diamond: "Needs a diamond pickaxe in its Gear"
+    ores:
+      name: "<aqua>Just ores"
+      lore: "Turn on every ore, nothing else"
+    clear:
+      name: "<red>Clear all"
+    job-on:
+      name: "<gold>Job: Miner (working)"
+      lore: "Click to stop mining"
+    job-off:
+      name: "<gold>Make it a Miner"
+      lore: "Click to set its job to Miner"
+    job:
+      where: "It mines what it can see near you\n(or near its spot in Stay mode)."
+    point-tip: "<yellow>Tip:</yellow> look at any ore and sneak + punch\nthe air: it digs a tunnel to it!"
+  emotes:
+    title: "<dark_purple>Mini Me emotes"
+    emote-name: "<light_purple>{emote}"
+    emote-lore: "Click: play it\nShift-click: play it and keep this menu open\n/miniz emote {id}"
+  main:
+    title: "<dark_purple>Customize your Mini Me"
+    head:
+      status-knocked-out: "knocked out ({seconds}s)"
+      status-out: "out"
+      status-away: "put away"
+      lore: "Status: {status}\nHealth: {health}\nJob: {job}\nBackpack: {used}/{size} slots used\nMode: {mode}"
+    put-away:
+      name: "<red>Put away"
+      lore: "Click to put your Mini Me away"
+    bring-out:
+      name: "<green>Bring out"
+      lore: "Click to bring your Mini Me out"
+    name:
+      name: "<gold>Name"
+      lore: "Left-click: type a new name\nRight-click: back to default\nColors work, e.g. <rainbow>Tiny</rainbow>"
+      prompt: "Type <click:suggest_command:'/miniz name '><hover:show_text:'Click to fill in the command'><yellow>/miniz name \\<your name></yellow></hover></click> — click here to start."
+    nametag:
+      name: "Show name"
+    mode:
+      name: "Mode"
+    pose:
+      name: "Resting pose"
+    trail:
+      name: "Trail"
+    glow:
+      "off": "Off"
+      name: "Glow: {color}"
+      lore: "Left-click: next color\nRight-click: previous color"
+    mimic:
+      name: "Copy me"
+      lore: "Copies your sneaking, swimming,\ngliding, arm swings and held items"
+    outfit:
+      name: "Wear my armor"
+    hand:
+      left: "<yellow>Main hand: left"
+      right: "<yellow>Main hand: right"
+      lore: "Click to switch"
+    summon:
+      name: "<green>Summon"
+      lore: "Pop it back next to you"
+    reset:
+      name: "<red>Reset everything"
+      lore: "Shift-click to reset all settings"
+      shift: "Shift-click to reset everything."
+    job:
+      name: "Job"
+    hunt-hostile:
+      name: "Hunt hostile mobs"
+      lore: "Zombies, skeletons, creepers, spiders...\n(when the job is Hunter)"
+    hunt-passive:
+      name: "Hunt passive mobs"
+      lore: "Cows, pigs, sheep, chickens...\nNever pets, named or leashed mobs,\nor babies"
+    replant:
+      name: "Replant crops"
+      lore: "Plants seeds back after harvesting"
+    collect:
+      name: "Loot into backpack"
+      lore: "Harvests, mob drops and nearby\ndropped items go into its backpack"
+    mining:
+      name: "<aqua>Mining: {count} picked"
+      lore: "Choose what the Miner digs up\n(when the job is Miner)"
+    gear:
+      name: "<green>Gear"
+      lore: "Armor and weapons for your Mini Me"
+    festive:
+      name: "Holiday looks"
+      lore: "Dresses up for holidays by itself:\nSanta hat + snow at Christmas,\npumpkin at Halloween, and more."
+      no-holiday: "No holiday today"
+      today: "Today: {holiday}!"
+    upgrades:
+      name: "<red>Upgrades (health level {level})"
+      lore: "Spend dragon eggs to raise its max health"
+    aggro:
+      name: "Mobs can attack it"
+      lore: "Mobs go after it and it fights back.\nArmor in its Gear protects it.\nIf it runs out of health it's knocked\nout for a bit (gear and loot are safe)."
+    backpack:
+      name: "<green>Backpack"
+      lore: "Click to open\nTip: sneak + right-click your Mini Me"
+    emotes:
+      name: "<light_purple>Emotes ({count})"
+      lore: "Click to pick an emote"
+  random-emote:
+    name: "<light_purple>Random emote"
+    lore: "Surprise me!"
+  click-to-turn-off: "Click to turn off"
+  click-to-turn-on: "Click to turn on"
+  toggle-format: "<yellow>{name}: {state}"
+  back: "<gray>Back"
+  cycler-hint: "Left-click: next\nRight-click: previous"
+  cycler-format: "<aqua>{name}: {value}"
+
+# The tab bar at the bottom of the Backpack / Gear / Upgrades screens.
+tab:
+  backpack:
+    name: "Backpack"
+    hint: "Its loot"
+  gear:
+    name: "Gear"
+    hint: "Armor and weapons for your Mini Me"
+  upgrades:
+    name: "Upgrades"
+    hint: "Make your Mini Me tougher"
+  selected-format: "<green>▶ {tab}"
+  format: "<yellow>{tab}"
+  you-are-here: "You're here"
+
+# The Backpack tab.
+backpack:
+  title: "<dark_green>Mini Me's backpack"
+  give-all:
+    name: "<gold>Give everything to me"
+    lore: "Moves everything that fits\ninto your inventory"
+    nothing-fit: "Nothing fit in your inventory."
+    done: "Took {count} items."
+  full-warning: "Your Mini Me's backpack is full! <click:run_command:'/miniz backpack'><yellow>[open it]</yellow></click>"
+
+# The Gear tab.
+gear:
+  title: "<dark_aqua>Mini Me's gear"
+  slot:
+    helmet: "<aqua>Helmet ↓"
+    chestplate: "<aqua>Chestplate ↓"
+    leggings: "<aqua>Leggings ↓"
+    boots: "<aqua>Boots ↓"
+    weapon: "<aqua>Weapon / tool ↓"
+    weapon-lore: "Swords and axes hit harder,\npickaxes mine faster"
+    offhand: "<aqua>Off hand ↓"
+  info:
+    health: "Health: {health} / {max}"
+    health-away: "Health: —"
+    name: "<gold>How gear works"
+    lore: "Armor protects it when mobs attack.\nIts weapon is used for hunting and\nfighting back; a pickaxe for mining.\nGear here beats Copy me / Wear my armor.\nGear doesn't wear out."
+  no-free-slot: "No free gear slot for that."
+  wrong-slot: "That doesn't go in that slot."
+
+# The Upgrades tab.
+upgrades:
+  title: "<dark_red>Mini Me upgrades"
+  item:
+    dragon-egg: "dragon egg"
+    dragon-eggs: "dragon eggs"
+  cost-format: "{amount} {item}"
+  pip-done: "<red>Health level {level} ✔"
+  pip-todo: "<gray>Health level {level}"
+  info:
+    name: "<red>Health: {health} ❤"
+    lore: "Level {level} of {max}\nEach level: +{per} max health\n1 {item} = {levels} levels\nHealth matters while\n\"Mobs can attack it\" is on."
+  maxed:
+    name: "<gold>Health maxed out!"
+    lore: "Level {level} — {health} max health"
+  buy:
+    name: "<green>Upgrade health (+{levels} levels)"
+    name-cant-afford: "<red>Upgrade health (+{levels} levels)"
+    lore: "{from} → {to} max health\nCost: {cost}"
+    click: "Click to upgrade"
+    need: "You need {cost} in your inventory"
+  max:
+    name: "<gold>At max level: {health} ❤"
+    lore: "Upgrades are kept forever,\neven through /miniz reset."
+  already-maxed: "Its health is already maxed out."
+  too-expensive: "That costs {cost}."
+
+# Movement modes.
+mode:
+  follow:
+    name: "Follow"
+    description: "Walks after you"
+  stay:
+    name: "Stay"
+    description: "Waits where it is"
+  orbit:
+    name: "Orbit"
+    description: "Floats in circles around you"
+  shoulder:
+    name: "Shoulder"
+    description: "Rides on your shoulder"
+
+# Resting poses.
+pose:
+  stand: "Standing"
+  sneak: "Sneaking"
+  sleep: "Lying down"
+  swim: "Swimming"
+  glide: "Gliding"
+
+# Particle trails.
+trail:
+  none: "None"
+  hearts: "Hearts"
+  flames: "Flames"
+  souls: "Soul flames"
+  notes: "Music notes"
+  sparkles: "Sparkles"
+  happy: "Happy"
+  clouds: "Clouds"
+  bubbles: "Bubbles"
+  magic: "Magic"
+
+# Jobs.
+job:
+  none:
+    name: "None"
+    description: "Just hangs out with you"
+  farm:
+    name: "Farmer"
+    description: "Harvests and replants grown crops"
+  hunt:
+    name: "Hunter"
+    description: "Fights mobs (pick hostile and/or passive)"
+  both:
+    name: "Farmer + Hunter"
+    description: "Farms, and fights mobs that come close"
+  mine:
+    name: "Miner"
+    description: "Mines the ores you pick in the Mining menu"
+
+# Things the Miner can mine (the Mining menu).
+mine:
+  coal: "Coal"
+  copper: "Copper"
+  iron: "Iron"
+  gold: "Gold"
+  redstone: "Redstone"
+  lapis: "Lapis"
+  diamond: "Diamond"
+  emerald: "Emerald"
+  quartz: "Nether quartz"
+  nether_gold: "Nether gold"
+  ancient_debris: "Ancient debris"
+  amethyst: "Amethyst clusters"
+  stone: "Stone"
+  netherrack: "Netherrack"
+  dirt: "Dirt"
+  sand: "Sand & gravel"
+  clay: "Clay"
+  obsidian: "Obsidian"
+
+# Emotes.
+emote:
+  wave:
+    name: "Wave"
+    description: "Waves hello"
+  dance:
+    name: "Dance"
+    description: "Busts a move"
+  jump:
+    name: "Jump"
+    description: "Two happy hops"
+  spin:
+    name: "Spin"
+    description: "A full twirl"
+  love:
+    name: "Love"
+    description: "Hearts for you"
+  clap:
+    name: "Clap"
+    description: "Applause!"
+  bow:
+    name: "Bow"
+    description: "A polite bow"
+  nod:
+    name: "Nod"
+    description: "Yes, yes"
+  shake:
+    name: "Head shake"
+    description: "Nope"
+  cheer:
+    name: "Cheer"
+    description: "Jumps and cheers"
+  laugh:
+    name: "Laugh"
+    description: "Giggles"
+  cry:
+    name: "Cry"
+    description: "Sad little tears"
+  angry:
+    name: "Angry"
+    description: "Stomps and fumes"
+  sleepy:
+    name: "Nap"
+    description: "Lies down for a quick nap"
+  faint:
+    name: "Faint"
+    description: "Wobbles... and flops over"
+  dizzy:
+    name: "Dizzy"
+    description: "Seeing stars"
+  punch:
+    name: "Punch"
+    description: "Shadow boxing"
+  leap:
+    name: "Leap"
+    description: "A big spinning jump"
+  moonwalk:
+    name: "Moonwalk"
+    description: "Slides backwards, smooth"
+  salute:
+    name: "Salute"
+    description: "Stands to attention"
+  celebrate:
+    name: "Celebrate"
+    description: "Fireworks party"
+  magic:
+    name: "Magic"
+    description: "A sparkly magic trick"
+  think:
+    name: "Think"
+    description: "Hmm... got it!"
+  wiggle:
+    name: "Wiggle"
+    description: "Wiggly little dance"
+
+# Holidays: their names, greetings, hats and gifts.
+holiday:
+  list:
+    no-date: "date not set (add it under festive.holidays.{key}.dates)"
+    line: "{holiday} — {date}"
+    line-off: "{holiday} (off) — {date}"
+  gift:
+    lucky-gold: "Lucky Gold"
+    rose: "Rose"
+    pot-of-gold: "Pot of Gold"
+    eid-sweets: "Eid Sweets"
+    totally-real-diamond: "Totally Real Diamond"
+    easter-egg: "Easter Egg"
+    bbq-steak: "BBQ Steak"
+    candy: "Candy"
+    turkey: "Turkey"
+    christmas-cake: "Christmas Cake"
+    chocolate-gelt: "Chocolate Gelt"
+  new_year:
+    name: "New Year"
+    greeting: "Happy New Year"
+    hat: "Party Crown"
+  lunar_new_year:
+    name: "Lunar New Year"
+    greeting: "Happy Lunar New Year"
+    hat: "Lucky Cap"
+  valentines:
+    name: "Valentine's Day"
+    greeting: "Happy Valentine's Day"
+    hat: "Sweetheart Cap"
+  st_patricks:
+    name: "St. Patrick's Day"
+    greeting: "Happy St. Patrick's Day"
+    hat: "Leprechaun Hat"
+  eid_al_fitr:
+    name: "Eid al-Fitr"
+    greeting: "Eid Mubarak"
+    hat: "Festive Cap"
+  april_fools:
+    name: "April Fools' Day"
+    greeting: "Happy April Fools'! ...your shoe's untied"
+    hat: "Very Serious Hat"
+  easter:
+    name: "Easter"
+    greeting: "Happy Easter"
+    hat: "Bunny Ears"
+  earth_day:
+    name: "Earth Day"
+    greeting: "Happy Earth Day"
+    hat: "Leaf Crown"
+  mothers_day:
+    name: "Mother's Day"
+    greeting: "Happy Mother's Day"
+    hat: "Flower Crown"
+  fathers_day:
+    name: "Father's Day"
+    greeting: "Happy Father's Day"
+    hat: "Dad Cap"
+  independence_day:
+    name: "Independence Day"
+    greeting: "Happy 4th of July"
+    hat: "Star Cap"
+  diwali:
+    name: "Diwali"
+    greeting: "Happy Diwali"
+    hat: "Festive Cap"
+  halloween:
+    name: "Halloween"
+    greeting: "Happy Halloween"
+    hat: "Spooky Pumpkin"
+  thanksgiving:
+    name: "Thanksgiving"
+    greeting: "Happy Thanksgiving"
+    hat: "Pilgrim Hat"
+  christmas:
+    name: "Christmas"
+    greeting: "Merry Christmas"
+    hat: "Santa Hat"
+  hanukkah:
+    name: "Hanukkah"
+    greeting: "Happy Hanukkah"
+    hat: "Festive Cap"
